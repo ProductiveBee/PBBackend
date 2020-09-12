@@ -15,11 +15,19 @@ public class Post {
     private Integer post_id;
     private String postTitle;
     private String postContent;
-    private Date date;
+    private String date;
     private String tag;
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name = "account_id", nullable = false)
     private Integer account_id;
+
+    public Post(String postTitle, String postContent, String date, String tag, Integer account_id) {
+        this.postTitle = postTitle;
+        this.postContent = postContent;
+        this.date = date;
+        this.tag = tag;
+        this.account_id = 1;
+    }
 
     public Integer getPost_id() {
         return post_id;
@@ -45,11 +53,11 @@ public class Post {
         this.postContent = postContent;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
