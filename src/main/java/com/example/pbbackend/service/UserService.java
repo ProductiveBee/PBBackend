@@ -5,6 +5,7 @@ import com.example.pbbackend.model.User;
 import com.example.pbbackend.repository.RoleRepository;
 import com.example.pbbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,9 @@ public class UserService {
     private UserRepository userRepository;
     private RoleRepository roleRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     @Autowired
     public UserService(UserRepository userRepository,
@@ -43,8 +47,10 @@ public class UserService {
         user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
         user.setScore(0);
         user.setStreak(0);
-        int accId = (int) (userRepository.count()+1);
+        int accId = (int)jdbcTemplate.queryForObject("select count(*) from account", Integer.class);
+//        int accId = (int) (userRepository.count()+1);
         user.setAccount_id(accId);
+        System.out.println(user.getAccount_id() +" acc id " + accId);
         return userRepository.save(user);
     }
 

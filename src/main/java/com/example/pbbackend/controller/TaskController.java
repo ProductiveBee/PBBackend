@@ -5,6 +5,8 @@ import com.example.pbbackend.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -35,11 +37,21 @@ public class TaskController {
 
     @PostMapping("/tasks")
     public @ResponseBody ResponseEntity<String> createNewTask() {
-    // check if the sum of all priorities = 100
-    // somehow get the user id of currently logged in user
-    // loop through and save task
-        taskRepository.findByUser(account_id);
-        taskRepository.save(task);
+
+        // somehow get the user id of currently logged in user
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            String username = ((UserDetails)principal).getUsername();
+            System.out.println("If ke andar " + username);
+        } else {
+            String username = principal.toString();
+            System.out.println("else ke andar "+ username);
+        }
+
+        // check if the sum of all priorities = 100
+        // loop through and save task
+//        taskRepository.findByUser(account_id);
+//        taskRepository.save(task);
         return new ResponseEntity<String>("POST added successfully!", HttpStatus.OK);
     }
 }
