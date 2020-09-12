@@ -47,10 +47,8 @@ public class UserService {
         user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
         user.setScore(0);
         user.setStreak(0);
-        int accId = (int)jdbcTemplate.queryForObject("select count(*) from account", Integer.class);
-//        int accId = (int) (userRepository.count()+1);
-        user.setAccount_id(accId);
-        System.out.println(user.getAccount_id() +" acc id " + accId);
+        int accId = (int) (userRepository.count()+1);
+        user.setAccountId(accId);
         return userRepository.save(user);
     }
 
