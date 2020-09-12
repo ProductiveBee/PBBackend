@@ -44,7 +44,7 @@ public class UserService {
         user.setScore(0);
         user.setStreak(0);
         int accId = (int) (userRepository.count()+1);
-        user.setAccount_id(accId);
+        user.setAccountId(accId);
         return userRepository.save(user);
     }
 

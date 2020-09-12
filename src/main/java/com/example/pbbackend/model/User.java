@@ -25,7 +25,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="account_id")
-    private Integer account_id;
+    private Integer accountId;
     private String name;
     @Length(min = 5, message = "*Your password must have at least 5 characters")
     @NotEmpty(message = "*Please provide your password")
@@ -64,12 +64,12 @@ public class User {
         this.active = active;
     }
 
-    public int getAccount_id() {
-        return account_id;
+    public int getAccountId() {
+        return accountId;
     }
 
-    public void setAccount_id(int account_id) {
-        this.account_id = account_id;
+    public void setAccountId(int account_id) {
+        this.accountId = account_id;
     }
 
     public String getName() {

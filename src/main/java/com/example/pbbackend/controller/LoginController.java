@@ -61,7 +61,7 @@ public class LoginController {
         ModelAndView modelAndView = new ModelAndView();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByName(auth.getName());
-        modelAndView.addObject("userName", "Welcome " + user.getAccount_id() + "/" + user.getName() + " " + " (" + user.getEmail() + ")");
+        modelAndView.addObject("userName", "Welcome " + user.getAccountId() + "/" + user.getName() + " " + " (" + user.getEmail() + ")");
         modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
         modelAndView.setViewName("admin/home");
         return modelAndView;

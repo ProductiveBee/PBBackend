@@ -1,34 +1,35 @@
 package com.example.pbbackend.model;
 
-import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.Date;
 
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "post")
-public class Post {
-
+@Table(name="streakpost")
+public class StreakPost {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "post_id")
+    @Column(name = "postId")
     private Integer postId;
     @NotEmpty(message = "*Please provide Title for the post")
     private String postTitle;
     private String postContent;
-    private String date;
-    private String tag;
+    private Date date;
     @ManyToOne(targetEntity = User.class)
-    @JoinColumn(name = "accountId", nullable = false)
-    private Integer accountId;
-
-    public Post(String postTitle, String postContent, String date, String tag, Integer account_id) {
-        this.postTitle = postTitle;
-        this.postContent = postContent;
-        this.date = date;
-        this.tag = tag;
-        this.accountId = 1;
-    }
+    @JoinColumn(name = "name", nullable = false)
+    private String name;
+    @ManyToOne(targetEntity = Streak.class)
+    @JoinColumn(name = "streakId", nullable = false)
+    private Integer streakId;
 
     public Integer getPostId() {
         return postId;
@@ -54,27 +55,29 @@ public class Post {
         this.postContent = postContent;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public String getTag() {
-        return tag;
+    public String getName() {
+        return name;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Integer getAccount_id() {
-        return accountId;
+    public Integer getStreakId() {
+        return streakId;
     }
 
-    public void setAccount_id(Integer account_id) {
-        this.accountId = account_id;
+    public void setStreakId(Integer streakId) {
+        this.streakId = streakId;
     }
 }
+
+

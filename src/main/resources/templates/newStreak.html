@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/newStreak.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!--<form th:action="@{/}" method="get">-->
+<!--    <button class="btn btn-md btn-warning btn-block" type="Submit">Go To Login Page</button>-->
+<!--</form>-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form autocomplete="off" action="#" th:action="@{/startNewStreak}"
+                  th:object="${streak}" method="post" class="form-horizontal"
+                  role="form">
+                <h2>Create New Streak</h2>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('numDays')}" th:errors="*{numDays}"
+                               class="validation-message"></label>
+                        <input type="text" th:field="*{numDays}" placeholder="Num of days planned for the streak?"
+                               class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{tag}" placeholder="what domain are you planning to work on?"
+                               class="form-control"/> <label
+                            th:if="${#fields.hasErrors('tag')}" th:errors="*{tag}"
+                            class="validation-message"></label>
+                    </div>
+                </div>
+
+<!--                <div class="form-group">-->
+<!--                    <div class="col-sm-9">-->
+<!--                        <input type="password" th:field="*{password}"-->
+<!--                               placeholder="Password" class="form-control"/> <label-->
+<!--                            th:if="${#fields.hasErrors('password')}" th:errors="*{password}"-->
+<!--                            class="validation-message"></label>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <button type="submit" class="btn btn-primary btn-block">Create Streak</button>
+                    </div>
+                </div>
+
+                <h2><span class="text-success" th:utext="${successMessage}"></span></h2>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
