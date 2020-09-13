@@ -21,21 +21,23 @@ import javax.validation.Valid;
 public class TimelineController {
     @Autowired
     StreakService streakService;
+    @Autowired
     StreakPostService streakPostService;
+    @Autowired
     UserService userService;
 
     @Autowired
     GetAccountOfLoggedInUser getAccountOfLoggedInUser;
 
-    @RequestMapping(value={"/timeline"}, method = RequestMethod.GET)
-    public ModelAndView viewTimeline(){
+    @RequestMapping(value = {"/timeline"}, method = RequestMethod.GET)
+    public ModelAndView viewTimeline() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("timeline");
         return modelAndView;
     }
 
-    @RequestMapping(value="/startNewStreak", method = RequestMethod.GET)
-    public ModelAndView creationStreak(){
+    @RequestMapping(value = "/startNewStreak", method = RequestMethod.GET)
+    public ModelAndView creationStreak() {
         ModelAndView modelAndView = new ModelAndView();
         Streak streak = new Streak();
         modelAndView.addObject("streak", streak);
@@ -50,38 +52,41 @@ public class TimelineController {
         //if findStreaksByAccountid has size more than one than can't create new
         System.out.println("Binding result " + bindingResult);
         String userName = getAccountOfLoggedInUser.getLoggedInUser();
-        System.out.println("logged in user: "+userName);
+        System.out.println("logged in user: " + userName);
 //      Streak streakExists = streakService.findStreakByName(userName);
 //      Streak streakExists = null;
         User user = userService.findUserByName(userName);
-        int accountId = user.getAccountId();
+        Integer accountId = user.getAccountId();
         Streak streakExists = streakService.findStreakByAccountId(accountId);
+        System.out.println("streak exists....................."+streakExists);
 
         if (streakExists != null) {
+            System.out.println("if ke andar...............");
             bindingResult
-                    .rejectValue("userName", "error.user",
+                    .rejectValue("tag", "error.user",
                             "You already have a streak created! Give your best there..");
         }
         if (bindingResult.hasErrors()) {
-            modelAndView.setViewName("newStreak");
+            System.out.println("bindigin resulk ke anser..............................");
         } else {
-            streak.setAccountId(accountId);
-            streakService.saveStreak(streak);
-            modelAndView.addObject("successMessage", "streak created successfully! All the best..");
-            modelAndView.addObject("streak", new Streak());
-            modelAndView.setViewName("newStreak");
+            System.out.println("else ke andar ............ streakkk exists:......"+streakExists);
+        streak.setAccountId(accountId);
+        streakService.saveStreak(streak);
+        modelAndView.addObject("successMessage", "streak created successfully! All the best..");
+        modelAndView.addObject("streak", new Streak());
 
         }
+        modelAndView.setViewName("newStreak");
         return modelAndView;
     }
 
 
-    @RequestMapping(value="/addNewPost", method = RequestMethod.GET)
-    public ModelAndView additionPost(){
+    @RequestMapping(value = "/addNewPost", method = RequestMethod.GET)
+    public ModelAndView additionPost() {
         ModelAndView modelAndView = new ModelAndView();
         StreakPost streakPost = new StreakPost();
         modelAndView.addObject("streakPost", streakPost);
-        modelAndView.setViewName("newPost");
+        modelAndView.setViewName("CreatePost");
         return modelAndView;
     }
 
@@ -91,12 +96,12 @@ public class TimelineController {
 //        User userExists = userService.findUserByName(user.getName());
         //if findStreaksByAccountid has size more than one than can't create new
         String userName = getAccountOfLoggedInUser.getLoggedInUser();
-        System.out.println("logged in user: "+userName);
+        System.out.println("logged in user: " + userName);
 
         streakPostService.saveStreakPost(streakPost);
         modelAndView.addObject("successMessage", "post created successfully! Great job..");
         modelAndView.addObject("streak", new Streak());
-        modelAndView.setViewName("newPost");
+        modelAndView.setViewName("CreatePost");
 
         return modelAndView;
     }

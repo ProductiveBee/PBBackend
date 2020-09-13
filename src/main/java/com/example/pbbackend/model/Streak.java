@@ -1,18 +1,7 @@
 package com.example.pbbackend.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
-import java.sql.Date;
-import java.sql.Timestamp;
 
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name="streak")
 public class Streak {
@@ -24,8 +13,8 @@ public class Streak {
     //"yyyy MM dd"
     private String dateStreakAdapted;
     private String tag;
-    @ManyToOne(targetEntity = User.class)
-    @JoinColumn(name = "accountId", nullable = false)
+    /*@ManyToMany(targetEnTtity = User.class)
+    @JoinColumn(name = "accountId", nullable = false)*/
     private Integer accountId;
 
     public Integer getStreakId() {

@@ -8,6 +8,6 @@ import java.util.List;
 @Repository
 public interface StreakPostRepository extends JpaRepository<StreakPost, Integer> {
     StreakPost findByPostId(Integer postId);
-    List<StreakPost> findByName(String name);
-    List<StreakPost> findByStreakId(Integer streakId);
+    StreakPost findByName(String name);
+    StreakPost findByStreakId(Integer streakId);
 }
