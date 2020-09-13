@@ -47,7 +47,6 @@ public class TaskController {
             String username = principal.toString();
             System.out.println("else ke andar "+ username);
         }
-
         // check if the sum of all priorities = 100
         // loop through and save task
 //        taskRepository.findByUser(account_id);

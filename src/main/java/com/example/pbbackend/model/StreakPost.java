@@ -24,11 +24,7 @@ public class StreakPost {
     private String postTitle;
     private String postContent;
     private String date;
-    @ManyToOne(targetEntity = User.class)
-    @JoinColumn(name = "accountId", nullable = false)
     private String name;
-    @ManyToOne(targetEntity = Streak.class)
-    @JoinColumn(name = "streakId", nullable = false)
     private Integer streakId;
 
     public Integer getPostId() {

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.validation.Valid;
 
@@ -33,6 +34,13 @@ public class TimelineController {
     public ModelAndView viewTimeline() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("timeline");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/homepage", method = RequestMethod.GET)
+    public ModelAndView viewHomepage() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("homepage");
         return modelAndView;
     }
 
@@ -91,7 +99,7 @@ public class TimelineController {
     }
 
     @RequestMapping(value = "/addNewPost", method = RequestMethod.POST)
-    public ModelAndView createNewPost(StreakPost streakPost, BindingResult bindingResult) {
+    public RedirectView createNewPost(StreakPost streakPost, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
 //        User userExists = userService.findUserByName(user.getName());
         //if findStreaksByAccountid has size more than one than can't create new
@@ -114,8 +122,6 @@ public class TimelineController {
         streakPostService.saveStreakPost(streakPost);
         modelAndView.addObject("successMessage", "post created successfully! Great job..");
         modelAndView.addObject("streak", new Streak());
-        modelAndView.setViewName("CreatePost");
-
-        return modelAndView;
+        return new RedirectView("/homepage");
     }
 }
