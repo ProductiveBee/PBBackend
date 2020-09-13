@@ -22,8 +22,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![MIT License][license-shield]][license-url]
+[![MIT License][license-shield]][https://github.com/ProductiveBee/PBBackend/blob/master/LICENSE]
 
 
 <!-- PROJECT LOGO -->
@@ -50,23 +49,31 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
+* [screenshots](#screenshots)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
-* [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+* [Contributors](#contributors)
 
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
- <img src="screenshots/homepage.PNG" alt="Logo">
+
+  
+
+
+
+Come on kid, this is your dream, give them the wings to fly. There are so many opportunities that go behind only because of the procrastination one shows in opening the doors. Actively learning new things, being consistent, being productive, managing tasks, spending time with family are the keys to becoming happy, and fulfilling the dreams. 1. When the dreamer wants to learn something new, the best way to master it is to work on it for a few days. The streak challenge! No, there is no dopamine pressure of getting more likes or views, it's simply you and the streak. Well, you get a reward in the score if you complete your target streak, and a penalty in the score if you don't. 2. Manage multiple tasks efficiently. Get a schedule and a discipline to follow it religiously because focussing on one thing at a time is always helpful. 3. If you are currently learning react, your timeline will inspire you more because you can see what other dreamers are learning when doing react in their streak motivating you with innovative projects and working hard. Get a community of learning.  
+This tracker would help you realize how awesome you can be.
+
+## screenshots
+<img src="screenshots/homepage.PNG" alt="Logo">
  <img src="screenshots/confirmStreak.PNG" alt="Logo">
  <img src="screenshots/login.PNG" alt="Logo">
  <img src="screenshots/logindb.PNG" alt="Logo">
@@ -80,15 +87,6 @@
   <img src="screenshots/usertimeline3.PNG" alt="Logo">
   <img src="screenshots/usertimeline4.PNG" alt="Logo">
    <img src="screenshots/UserTimeLineMotivation.PNG" alt="Logo">
-
-
-
-  
-
-
-
-Come on kid, this is your dream, give them the wings to fly. There are so many opportunities that go behind only because of the procrastination one shows in opening the doors. Actively learning new things, being consistent, being productive, managing tasks, spending time with family are the keys to becoming happy, and fulfilling the dreams. 1. When the dreamer wants to learn something new, the best way to master it is to work on it for a few days. The streak challenge! No, there is no dopamine pressure of getting more likes or views, it's simply you and the streak. Well, you get a reward in the score if you complete your target streak, and a penalty in the score if you don't. 2. Manage multiple tasks efficiently. Get a schedule and a discipline to follow it religiously because focussing on one thing at a time is always helpful. 3. If you are currently learning react, your timeline will inspire you more because you can see what other dreamers are learning when doing react in their streak motivating you with innovative projects and working hard. Get a community of learning.  
-This tracker would help you realize how awesome you can be.
 
 
 ### Built With
