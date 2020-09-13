@@ -23,7 +23,7 @@ public class StreakPost {
     @NotEmpty(message = "*Please provide Title for the post")
     private String postTitle;
     private String postContent;
-    private Date date;
+    private String date;
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name = "name", nullable = false)
     private String name;
@@ -55,11 +55,11 @@ public class StreakPost {
         this.postContent = postContent;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
