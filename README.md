@@ -30,7 +30,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="screenshots/pbimage.jpeg" alt="Logo" width="80" height="80">
+    <img src="screenshots/pbimage.jpeg" alt="Logo">
   </a>
 
   <h3 align="center">ProductiveBee</h3>
@@ -67,6 +67,23 @@
 ## About The Project
 
  <img src="screenshots/homepage.PNG" alt="Logo">
+ <img src="screenshots/confirmStreak.PNG" alt="Logo">
+ <img src="screenshots/login.PNG" alt="Logo">
+ <img src="screenshots/logindb.PNG" alt="Logo">
+  <img src="screenshots/masterOfOneStreak.PNG" alt="Logo">
+  <img src="screenshots/newStreakCreate.PNG" alt="Logo">
+  <img src="screenshots/newStreak.PNG" alt="Logo">
+  <img src="screenshots/registration.PNG" alt="Logo">
+  <img src="screenshots/registration.PNG" alt="Logo">
+  <img src="screenshots/userprofile.PNG" alt="Logo">
+   <img src="screenshots/usertimeline2.PNG" alt="Logo">
+  <img src="screenshots/usertimeline3.PNG" alt="Logo">
+  <img src="screenshots/usertimeline4.PNG" alt="Logo">
+   <img src="screenshots/UserTimeLineMotivation.PNG" alt="Logo">
+
+
+
+  
 
 
 
