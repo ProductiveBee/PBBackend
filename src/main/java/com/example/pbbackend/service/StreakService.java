@@ -11,9 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.HashSet;
 
 
@@ -36,8 +38,9 @@ public class StreakService {
 //    }
 
     public Streak saveStreak(Streak streak) {
-        java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime());
-        streak.setDateStreakAdapted(date);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd");
+        LocalDateTime now = LocalDateTime.now();
+        streak.setDateStreakAdapted(dtf.format(now));
         streakRepository.save(streak);
         return streak;
     }
