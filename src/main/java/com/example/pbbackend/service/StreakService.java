@@ -29,13 +29,13 @@ public class StreakService {
         this.streakRepository=streakRepository;
     }
 
-    public Streak findStreakByStreak_id(Integer streakId) {
+    public Streak findStreakByStreakId(Integer streakId) {
         return streakRepository.findByStreakId(streakId);
     }
 
-//    public Streak findStreakByName(String name) {
-//        return streakRepository.findByName(name);
-//    }
+    public Streak findStreakByAccountId(Integer accountId) {
+        return streakRepository.findByAccountId(accountId);
+    }
 
     public Streak saveStreak(Streak streak) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd");

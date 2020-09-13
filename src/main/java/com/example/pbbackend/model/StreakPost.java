@@ -25,7 +25,7 @@ public class StreakPost {
     private String postContent;
     private String date;
     @ManyToOne(targetEntity = User.class)
-    @JoinColumn(name = "name", nullable = false)
+    @JoinColumn(name = "accountId", nullable = false)
     private String name;
     @ManyToOne(targetEntity = Streak.class)
     @JoinColumn(name = "streakId", nullable = false)
