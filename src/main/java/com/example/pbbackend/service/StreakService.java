@@ -33,14 +33,15 @@ public class StreakService {
         return streakRepository.findByStreakId(streakId);
     }
 
-    public Streak findStreakByName(String name) {
-        return streakRepository.findByName(name);
-    }
+//    public Streak findStreakByName(String name) {
+//        return streakRepository.findByName(name);
+//    }
 
     public Streak saveStreak(Streak streak) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd");
         LocalDateTime now = LocalDateTime.now();
         streak.setDateStreakAdapted(dtf.format(now));
+        streakRepository.save(streak);
         return streak;
     }
 }

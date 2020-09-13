@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Data
@@ -23,10 +24,10 @@ import java.util.Set;
 public class User {
 
     @Id
+    @Column(name="name")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="account_id")
     private Integer accountId;
-    @Column(name="name",unique=true)
+    @Column(name="name", unique = true)
     private String name;
     @Length(min = 5, message = "*Your password must have at least 5 characters")
     @NotEmpty(message = "*Please provide your password")
