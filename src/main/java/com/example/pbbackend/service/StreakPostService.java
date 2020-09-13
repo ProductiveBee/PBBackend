@@ -24,11 +24,11 @@ public class StreakPostService {
         return streakPostRepository.findByPostId(postId);
 
     }
-    List<StreakPost> findPostByName(String name){
+    StreakPost findPostByName(String name){
         return streakPostRepository.findByName(name);
 
     }
-    List<StreakPost> findPostByStreakId(Integer streakId){
+    StreakPost findPostByStreakId(Integer streakId){
         return streakPostRepository.findByStreakId(streakId);
     }
 

@@ -34,13 +34,18 @@ public class StreakService {
     }
 
     public Streak findStreakByAccountId(Integer accountId) {
+        System.out.println("inside find streak by acc id.......................................");
         return streakRepository.findByAccountId(accountId);
+//        return new Streak();
     }
+
 
     public Streak saveStreak(Streak streak) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd");
         LocalDateTime now = LocalDateTime.now();
         streak.setDateStreakAdapted(dtf.format(now));
+        int streakId = (int) (streakRepository.count()+1);
+        streak.setStreakId(streakId);
         streakRepository.save(streak);
         return streak;
     }
