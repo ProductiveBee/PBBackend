@@ -65,11 +65,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-
-  
-
-
-
 Come on kid, this is your dream, give them the wings to fly. 
 There are so many opportunities that go behind only because of the procrastination one shows in opening the doors. 
 Actively learning new things, being consistent, being productive, managing tasks, 
