@@ -1,31 +1,43 @@
 package com.example.pbbackend.service;
 
-import com.example.pbbackend.model.Streak;
 import com.example.pbbackend.model.StreakPost;
-import com.example.pbbackend.repository.StreakRepository;
+import com.example.pbbackend.repository.StreakPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 @Service
 public class StreakPostService {
 
-    private StreakRepository streakRepository;
+    @Autowired
+    private StreakPostRepository streakPostRepository;
 
     @Autowired
-    public StreakPostService(StreakRepository streakRepository) {
-        this.streakRepository=streakRepository;
+    public StreakPostService(StreakPostRepository streakPostRepository) {
+        this.streakPostRepository=streakPostRepository;
     }
 
-    public Streak findStreakByStreakId(Integer streakId) {
-        return streakRepository.findByStreakId(streakId);
+    StreakPost findPostByPostId(Integer postId){
+        return streakPostRepository.findByPostId(postId);
+
+    }
+    List<StreakPost> findPostByName(String name){
+        return streakPostRepository.findByName(name);
+
+    }
+    List<StreakPost> findPostByStreakId(Integer streakId){
+        return streakPostRepository.findByStreakId(streakId);
     }
 
-    public Streak findStreakByName(String name) {
-        return streakRepository.findByName(name);
-    }
 
     public StreakPost saveStreakPost(StreakPost streakPost) {
-        java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime());
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd");
+        LocalDateTime now = LocalDateTime.now();
+        streakPost.setDate(dtf.format(now));
+        streakPostRepository.save(streakPost);
         return streakPost;
     }
 }

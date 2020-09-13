@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface StreakPostRepository extends JpaRepository<StreakPost, Integer> {
-    StreakPost findBypostId(Integer postId);
+    StreakPost findByPostId(Integer postId);
     List<StreakPost> findByName(String name);
-    List<StreakPost> findBystreakId(Integer streakId);
+    List<StreakPost> findByStreakId(Integer streakId);
 }
