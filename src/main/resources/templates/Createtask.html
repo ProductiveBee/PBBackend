@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="CodeFreaks">
+    <title>ProductiveBee</title>
+
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+
+    <div class=container>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Plan your day</h1>
+            </div>
+        </div>
+
+        <form action="http://localhost:8080/tasks" method="POST">
+            <div class="form-group">
+                <label for="hours">Total number of hours</label>
+                <input type="number" class="form-control" id="hours" placeholder="Enter total time you can devote"
+                    name="hours">
+            </div>
+
+            <div id="allTasks">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="task">Task</label>
+                        <input type="text" class="form-control" id="task" placeholder="Task" name="Task1">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="priority">Priority</label>
+                        <input type="number" min="1" max="100" class="form-control" id="priority" placeholder="Priority"
+                            aria-describedby="taskhelp" name="Priority1">
+                        <small id="taskhelp" class="form-text text-muted">Enter a percentage between 1-100</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <a class="btn btn-primary btn-info pull pull-right" onClick="addRow()">
+                    Add More tasks
+                </a>
+            </div>
+            <br><br>
+            <!-- /row -->
+            <br>
+
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+    </div>
+    <!-- /form-panel -->
+    </div>
+    </div>
+    </form>
+</body>
+
+<script>
+    var count = 1;
+    function addRow() {
+        console.log("clickkk");
+        count++;
+        var html_to_insert = '<div class="form-row"><div class="form-group col-md-6"><label for="task">Task</label><input type="text" class="form-control" id="task" placeholder="Task" name = "Task'+ count.toString() + '"></div><div class="form-group col-md-6"><label for="priority">Priority</label><input type="number" min="1" max="100" class="form-control" id="priority" placeholder="Priority" name="Priority' + count.toString() + '"></div></div>';
+        document.getElementById('allTasks').insertAdjacentHTML('beforeend', html_to_insert);
+    }
+
+</script>
+
+
+</html>
