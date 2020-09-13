@@ -38,7 +38,7 @@
   <p align="center">
     ProductiveBee is a platform that helps say no to procrastination and be consistent, not every pro is better than a con :)
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ProductiveBee/PBBackend"><strong>Explore the docs »</strong></a>
     <br />
     <br />
   </p>
@@ -81,36 +81,38 @@ This tracker would help you realize how awesome you can be.
 * SpringBoot
 * HTML,CSS
 * JavaScript
-* SQL
+* MySQL
 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+To get a local copy up and running follow these simple steps:
 
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* Have a local SQL database running
-* Modify the application.properties file
-```sh
- https://github.com/ProductiveBee/PBBackend.git
-```
+* Have maven installed. You can follow the below link for the same.  
+  https://mkyong.com/maven/how-to-install-maven-in-windows/  
+* To have a local mySQL database running make the following modifications to the application.properties file:  
+  1. Your username  
+  2. Your password  
+  3. Your database name  
+  
 ### Installation
 
-1. Clone the repo
+1. Clone the repository 
 ```sh
  https://github.com/ProductiveBee/PBBackend.git
 ```
-2. Install Maven dependencies
+2. Install the required Maven dependencies using the following commands
 ```sh
 mvn clean
 maven compile
 mnv install
 ```
-
+3. After doing so, you will have your server up and running @localhost:8080  
 
 
 <!-- USAGE EXAMPLES -->
@@ -150,7 +152,11 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 <!-- CONTACT -->
-## Contact
+## Contributors  
+ 
+ 1. Dhwani Agarwal  
+ 2. Nikita Masand  
+ 3. Kritika Ravishankar  
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
 
