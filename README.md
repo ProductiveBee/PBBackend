@@ -48,7 +48,7 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-* [Features] (#Features)
+* [Features](#Features)
 * [screenshots](#screenshots)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
