@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 @Data
@@ -20,7 +21,8 @@ public class Streak {
     @Column(name = "streakId")
     private Integer streakId;
     private Integer numDays;
-    private Timestamp dateStreakAdapted;
+    //"yyyy MM dd"
+    private String dateStreakAdapted;
     private String tag;
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name = "name", nullable = false)
@@ -42,11 +44,11 @@ public class Streak {
         this.numDays = numDays;
     }
 
-    public Timestamp getDateStreakAdapted() {
+    public String getDateStreakAdapted() {
         return dateStreakAdapted;
     }
 
-    public void setDateStreakAdapted(Timestamp dateStreakAdapted) {
+    public void setDateStreakAdapted(String dateStreakAdapted) {
         this.dateStreakAdapted = dateStreakAdapted;
     }
 

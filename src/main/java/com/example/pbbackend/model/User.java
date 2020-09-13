@@ -26,6 +26,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="account_id")
     private Integer accountId;
+    @Column(name="name",unique=true)
     private String name;
     @Length(min = 5, message = "*Your password must have at least 5 characters")
     @NotEmpty(message = "*Please provide your password")
