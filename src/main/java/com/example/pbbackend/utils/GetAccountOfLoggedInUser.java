@@ -14,6 +14,7 @@ public class GetAccountOfLoggedInUser {
         } else {
             userName = principal.toString();
         }
+        System.out.println(userName);
         return userName;
     }
 }

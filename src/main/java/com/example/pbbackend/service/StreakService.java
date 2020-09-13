@@ -31,13 +31,14 @@ public class StreakService {
         return streakRepository.findByStreakId(streakId);
     }
 
-    public Streak findStreakByName(String name) {
-        return streakRepository.findByName(name);
-    }
+//    public Streak findStreakByName(String name) {
+//        return streakRepository.findByName(name);
+//    }
 
     public Streak saveStreak(Streak streak) {
         java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime());
         streak.setDateStreakAdapted(date);
+        streakRepository.save(streak);
         return streak;
     }
 }

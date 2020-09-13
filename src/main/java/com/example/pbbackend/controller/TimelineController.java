@@ -45,9 +45,11 @@ public class TimelineController {
         ModelAndView modelAndView = new ModelAndView();
 //        User userExists = userService.findUserByName(user.getName());
         //if findStreaksByAccountid has size more than one than can't create new
+        System.out.println("Binding result " + bindingResult);
         String userName = getAccountOfLoggedInUser.getLoggedInUser();
         System.out.println("logged in user: "+userName);
-        Streak streakExists = streakService.findStreakByName(userName);
+//        Streak streakExists = streakService.findStreakByName(userName);
+        Streak streakExists = null;
         if (streakExists != null) {
             bindingResult
                     .rejectValue("userName", "error.user",
@@ -56,6 +58,8 @@ public class TimelineController {
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("newStreak");
         } else {
+            System.out.println("else mein aaya ");
+            streak.setName(userName);
             streakService.saveStreak(streak);
             modelAndView.addObject("successMessage", "streak created successfully! All the best..");
             modelAndView.addObject("streak", new Streak());
@@ -82,6 +86,7 @@ public class TimelineController {
         //if findStreaksByAccountid has size more than one than can't create new
         String userName = getAccountOfLoggedInUser.getLoggedInUser();
         System.out.println("logged in user: "+userName);
+
         streakPostService.saveStreakPost(streakPost);
         modelAndView.addObject("successMessage", "post created successfully! Great job..");
         modelAndView.addObject("streak", new Streak());
