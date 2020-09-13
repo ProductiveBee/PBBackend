@@ -95,9 +95,22 @@ public class TimelineController {
         ModelAndView modelAndView = new ModelAndView();
 //        User userExists = userService.findUserByName(user.getName());
         //if findStreaksByAccountid has size more than one than can't create new
+
         String userName = getAccountOfLoggedInUser.getLoggedInUser();
         System.out.println("logged in user: " + userName);
 
+        streakPost.setName(userName);
+
+        //getting streak from user
+        User user = userService.findUserByName(userName);
+        int accountId = user.getAccountId();
+        System.out.println("===============\nAccountId : "+ accountId);
+        Streak streak = streakService.findStreakByAccountId(accountId);
+
+        // get streakId from "Streak" by using the username
+        streakPost.setStreakId(streak.getStreakId());
+
+        //date added in saveStreakPost function which is called
         streakPostService.saveStreakPost(streakPost);
         modelAndView.addObject("successMessage", "post created successfully! Great job..");
         modelAndView.addObject("streak", new Streak());
