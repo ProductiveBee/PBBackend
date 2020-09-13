@@ -23,12 +23,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 
 
 <!-- PROJECT LOGO -->
@@ -38,19 +33,14 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">YOUR_TITLE</h3>
+  <h3 align="center">ProductiveBee</h3>
 
   <p align="center">
-    YOUR_SHORT_DESCRIPTION
+    ProductiveBee is a platform that helps say no to procrastination and be consistent, not every pro is better than a con :)
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
   </p>
 </p>
 
@@ -78,16 +68,20 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
 `github_username`, `repo_name`, `twitter_handle`, `email`
 
 
+Come on kid, this is your dream, give them the wings to fly. There are so many opportunities that go behind only because of the procrastination one shows in opening the doors. Actively learning new things, being consistent, being productive, managing tasks, spending time with family are the keys to becoming happy, and fulfilling the dreams. 1. When the dreamer wants to learn something new, the best way to master it is to work on it for a few days. The streak challenge! No, there is no dopamine pressure of getting more likes or views, it's simply you and the streak. Well, you get a reward in the score if you complete your target streak, and a penalty in the score if you don't. 2. Manage multiple tasks efficiently. Get a schedule and a discipline to follow it religiously because focussing on one thing at a time is always helpful. 3. If you are currently learning react, your timeline will inspire you more because you can see what other dreamers are learning when doing react in their streak motivating you with innovative projects and working hard. Get a community of learning.  
+This tracker would help you realize how awesome you can be.
+
+
 ### Built With
 
-* []()
-* []()
-* []()
+* SpringBoot
+* HTML,CSS
+* JavaScript
+* SQL
 
 
 
@@ -99,20 +93,22 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+* Have a local SQL database running
+* Modify the application.properties file
 ```sh
-npm install npm@latest -g
+ https://github.com/ProductiveBee/PBBackend.git
 ```
-
 ### Installation
 
 1. Clone the repo
 ```sh
-git clone https://github.com/github_username/repo_name.git
+ https://github.com/ProductiveBee/PBBackend.git
 ```
-2. Install NPM packages
+2. Install Maven dependencies
 ```sh
-npm install
+mvn clean
+maven compile
+mnv install
 ```
 
 
