@@ -24,7 +24,7 @@ import java.util.Set;
 public class User {
 
     @Id
-    @Column(name="name")
+    @Column(name="accountId")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer accountId;
     @Column(name="name", unique = true)

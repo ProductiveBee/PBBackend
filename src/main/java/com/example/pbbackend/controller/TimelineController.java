@@ -2,8 +2,10 @@ package com.example.pbbackend.controller;
 
 import com.example.pbbackend.model.Streak;
 import com.example.pbbackend.model.StreakPost;
+import com.example.pbbackend.model.User;
 import com.example.pbbackend.service.StreakPostService;
 import com.example.pbbackend.service.StreakService;
+import com.example.pbbackend.service.UserService;
 import com.example.pbbackend.utils.GetAccountOfLoggedInUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,7 @@ public class TimelineController {
     @Autowired
     StreakService streakService;
     StreakPostService streakPostService;
+    UserService userService;
 
     @Autowired
     GetAccountOfLoggedInUser getAccountOfLoggedInUser;
@@ -48,8 +51,12 @@ public class TimelineController {
         System.out.println("Binding result " + bindingResult);
         String userName = getAccountOfLoggedInUser.getLoggedInUser();
         System.out.println("logged in user: "+userName);
-//        Streak streakExists = streakService.findStreakByName(userName);
-        Streak streakExists = null;
+//      Streak streakExists = streakService.findStreakByName(userName);
+//      Streak streakExists = null;
+        User user = userService.findUserByName(userName);
+        int accountId = user.getAccountId();
+        Streak streakExists = streakService.findStreakByAccountId(accountId);
+
         if (streakExists != null) {
             bindingResult
                     .rejectValue("userName", "error.user",
@@ -58,8 +65,7 @@ public class TimelineController {
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("newStreak");
         } else {
-            System.out.println("else mein aaya ");
-            streak.setName(userName);
+            streak.setAccountId(accountId);
             streakService.saveStreak(streak);
             modelAndView.addObject("successMessage", "streak created successfully! All the best..");
             modelAndView.addObject("streak", new Streak());

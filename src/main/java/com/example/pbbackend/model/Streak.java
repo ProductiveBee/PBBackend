@@ -26,7 +26,7 @@ public class Streak {
     private String tag;
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name = "accountId", nullable = false)
-    private String name;
+    private Integer accountId;
 
     public Integer getStreakId() {
         return streakId;
@@ -60,11 +60,11 @@ public class Streak {
         this.tag = tag;
     }
 
-    public String getName() {
-        return name;
+    public Integer getAccountId() {
+        return accountId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAccountId(Integer accountId) {
+        this.accountId = accountId;
     }
 }
