@@ -30,7 +30,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="screenshots/pbimage.jpeg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">ProductiveBee</h3>
@@ -66,10 +66,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+ <img src="screenshots/homepage.PNG" alt="Logo">
 
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`
 
 
 Come on kid, this is your dream, give them the wings to fly. There are so many opportunities that go behind only because of the procrastination one shows in opening the doors. Actively learning new things, being consistent, being productive, managing tasks, spending time with family are the keys to becoming happy, and fulfilling the dreams. 1. When the dreamer wants to learn something new, the best way to master it is to work on it for a few days. The streak challenge! No, there is no dopamine pressure of getting more likes or views, it's simply you and the streak. Well, you get a reward in the score if you complete your target streak, and a penalty in the score if you don't. 2. Manage multiple tasks efficiently. Get a schedule and a discipline to follow it religiously because focussing on one thing at a time is always helpful. 3. If you are currently learning react, your timeline will inspire you more because you can see what other dreamers are learning when doing react in their streak motivating you with innovative projects and working hard. Get a community of learning.  
@@ -158,18 +156,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
  2. Nikita Masand  
  3. Kritika Ravishankar  
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
 
 
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
 
 
 
